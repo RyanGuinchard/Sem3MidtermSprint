@@ -1,11 +1,12 @@
 package Java;
 
-public class BookClass {
+public class BookClass implements Borrowable {
     private String title;
     private AuthorClass author;
     private String ISBN;
     private String publisher;
     private Integer numberOfCopies;
+    private Status status;
 
     public BookClass(String title, AuthorClass author, String ISBN, String publisher, Integer numberOfCopies) {
         this.title = title;
@@ -13,6 +14,7 @@ public class BookClass {
         this.ISBN = ISBN;
         this.publisher = publisher;
         this.numberOfCopies = numberOfCopies;
+        this.status = Status.AVAILABLE;
     };
 
     // Getter method for title:
@@ -40,6 +42,11 @@ public class BookClass {
         return numberOfCopies;
     };
 
+    // Getter method for status:
+    public Status getStatus() {
+        return status;
+    }
+
     // Setter method for title:
     public void setTitle(String title) {
         this.title = title;
@@ -64,4 +71,29 @@ public class BookClass {
     public void setNumberOfCopies(Integer numberOfCopies) {
         this.numberOfCopies = numberOfCopies;
     }
+
+    // Setter method for status:
+    public void setStatus(Status status) {
+        this.status = status;
+    };
+
+    // borrow method:
+    public void borrow() {
+        if (status == Status.AVAILABLE) {
+            status = Status.CHECKED_OUT;
+            System.out.println("Book checked out successfully.");
+        } else {
+            System.out.println("Book is not available for borrowing.");
+        }
+    };
+    
+    // return method:
+    public void returnBook() {
+        if (status == Status.CHECKED_OUT) {
+            status = Status.AVAILABLE;
+            System.out.println("Book returned successfully.");
+        } else {
+            System.out.println("Cannot return a book that is not checked out.");
+        }
+    };
 };
