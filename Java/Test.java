@@ -25,6 +25,8 @@ public class Test {
         System.out.println(book.getPublisher());
         System.out.println(book.getNumberOfCopies());
 
+        System.out.println("-----------------");
+        
         // Test Borrow and Return:
         System.out.println("Inital: " + book.getStatus());
         book.borrowBook();
