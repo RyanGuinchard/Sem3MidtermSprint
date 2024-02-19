@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
-    private List<BookClass> books;
-    private List<AuthorClass> authors;
+    private List<Book> books;
+    private List<Author> authors;
     private List<Patron> patrons;
 
     // Constructor
@@ -16,9 +16,9 @@ public class Library {
     }
 
     // Methods to search books by title, author and ISBN
-    public List<BookClass> searchBooksByTitle(String title) {
-        List<BookClass> result = new ArrayList<>();
-        for (BookClass book : books) {
+    public List<Book> searchBooksByTitle(String title) {
+        List<Book> result = new ArrayList<>();
+        for (Book book : books) {
             if (book.getTitle().toLowerCase().contains(title.toLowerCase())) {
                 result.add(book);
             }
@@ -26,9 +26,9 @@ public class Library {
         return result;
     }
 
-    public List<BookClass> searchBooksByAuthor(String author) {
-        List<BookClass> result = new ArrayList<>();
-        for (BookClass book : books) {
+    public List<Book> searchBooksByAuthor(String author) {
+        List<Book> result = new ArrayList<>();
+        for (Book book : books) {
             if (book.getAuthor().getName().toLowerCase().contains(author.toLowerCase())) {
                 result.add(book);
             }
@@ -36,8 +36,8 @@ public class Library {
         return result;
     }
 
-    public BookClass searchBooksByISBN(String ISBN) {
-        for (BookClass book : books) {
+    public Book searchBooksByISBN(String ISBN) {
+        for (Book book : books) {
             if (book.getISBN().equals(ISBN)) {
                 return book;
             }
@@ -46,7 +46,7 @@ public class Library {
     }
 
     // Method to borrow book
-    public void borrowBook(BookClass book, Patron patron) {
+    public void borrowBook(Book book, Patron patron) {
         if (book.getStatus() == Status.AVAILABLE) {
             book.setStatus(Status.CHECKED_OUT);
             patron.borrowBook(book);
@@ -57,7 +57,7 @@ public class Library {
     }
 
     // Method to return book
-    public void returnBook(BookClass book, Patron patron) {
+    public void returnBook(Book book, Patron patron) {
         if (book.getStatus() == Status.CHECKED_OUT) {
             book.setStatus(Status.AVAILABLE);
             patron.returnBook(book);
@@ -69,12 +69,12 @@ public class Library {
 
 
     //Method to add a book
-    public void addBook(BookClass book) {
+    public void addBook(Book book) {
         books.add(book);
     }
 
     // Method to add an author
-    public void addAuthor(AuthorClass author) {
+    public void addAuthor(Author author) {
         authors.add(author);
     }
 

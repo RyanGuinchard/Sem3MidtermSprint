@@ -2,12 +2,12 @@ package Java;
 import java.text.SimpleDateFormat;
 import java.util.Date; 
 
-public class AuthorClass {
+public class Author {
     private String name;
     private Date dateOfBirth;
-    private BookClass[] booksWritten;
+    private Book[] booksWritten;
 
-    public AuthorClass(String name, Date dateOfBirth, BookClass[] booksWritten) {
+    public Author(String name, Date dateOfBirth, Book[] booksWritten) {
       this.name = name;
       this.dateOfBirth = dateOfBirth;  
       this.booksWritten = booksWritten;
@@ -24,9 +24,13 @@ public class AuthorClass {
     };
     
     // Getter method for booksWritten:
-    public BookClass[] getBooksWritten() {
+    public Book[] getBooksWritten() {
         return booksWritten;
     };
+
+    public String toString() {
+        return this.name + " | " + this.getDateOfBirthAsString();
+    }
 
     // Getter method for dateOfBirth as a String:
     public String getDateOfBirthAsString() {
@@ -40,7 +44,7 @@ public class AuthorClass {
             return "No books written.";
         }
         StringBuilder booksString = new StringBuilder();
-        for (BookClass book : booksWritten) {
+        for (Book book : booksWritten) {
             booksString.append(book.getTitle()).append(", ");
         }
         return booksString.substring(0, booksString.length() - 2);
@@ -57,13 +61,13 @@ public class AuthorClass {
     };
 
     // adds a book to the booksWritten array:
-    public void addBook(BookClass book) {
+    public void addBook(Book book) {
         // Check if booksWritten is null:
         if (booksWritten == null) {
-            booksWritten = new BookClass[]{book};
+            booksWritten = new Book[]{book};
         } else {
             // If not null adds book to array.
-            BookClass[] newBooksArray = new BookClass[booksWritten.length + 1];
+            Book[] newBooksArray = new Book[booksWritten.length + 1];
             System.arraycopy(booksWritten, 0, newBooksArray, 0, booksWritten.length);
             newBooksArray[booksWritten.length] = book;
             booksWritten = newBooksArray;

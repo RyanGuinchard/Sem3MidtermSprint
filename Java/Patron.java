@@ -1,18 +1,20 @@
 package Java;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Patron {
     private String name;
     private String address;
     private String phoneNumber;
-    private List<BookClass> borrowedBooks;
+    private List<Book> borrowedBooks;
 
     // Constructor
     public Patron(String name, String address, String phoneNumber) {
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
+        this.borrowedBooks = new ArrayList<>();
     }
 
     // Getter Methods
@@ -29,7 +31,7 @@ public class Patron {
 
     }
 
-    public List<BookClass> getBorrowedBooks() {
+    public List<Book> getBorrowedBooks() {
         return borrowedBooks;
     }
 
@@ -46,17 +48,17 @@ public class Patron {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setBorrowedBooks(List<BookClass> borrowedBooks) {
+    public void setBorrowedBooks(List<Book> borrowedBooks) {
         this.borrowedBooks = borrowedBooks;
     }
 
     //Method to add a borrowed book
-    public void borrowBook(BookClass book) {
+    public void borrowBook(Book book) {
         borrowedBooks.add(book);
     }
 
     //Method to return a borrowed book
-    public void returnBook(BookClass book) {
+    public void returnBook(Book book) {
         borrowedBooks.remove(book);
     }
 
