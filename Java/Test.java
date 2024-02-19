@@ -11,19 +11,27 @@ public class Test {
         BookClass book = new BookClass("The Bible", author, "1234567890", "Sample Publisher", 50);
         author.addBook(book);
 
-        // Test AuthorClass
+        // Test AuthorClass:
         System.out.println(author.getName());
         System.out.println(author.getDateOfBirthAsString());
         System.out.println(author.getName());
-        System.err.println(author.getBooksWrittenAsString());
+        System.out.println(author.getBooksWrittenAsString());
 
-        System.err.println("-----------------");
+        System.out.println("-----------------");
 
-        // Test BookClass
+        // Test BookClass:
         System.out.println(book.getTitle());
         System.out.println(book.getISBN());
         System.out.println(book.getPublisher());
         System.out.println(book.getNumberOfCopies());
 
+        System.out.println("-----------------");
+        
+        // Test Borrow and Return:
+        System.out.println("Inital: " + book.getStatus());
+        book.borrowBook();
+        System.out.println("Borrowed: " + book.getStatus());
+        book.returnBook();
+        System.out.println("Returned: " + book.getStatus());
     }
 }
