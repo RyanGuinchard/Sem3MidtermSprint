@@ -27,7 +27,7 @@ public class Test {
 
         // Test Borrow and Return:
         System.out.println("Inital: " + book.getStatus());
-        book.borrow();
+        book.borrowBook();
         System.out.println("Borrowed: " + book.getStatus());
         book.returnBook();
         System.out.println("Returned: " + book.getStatus());

@@ -78,7 +78,7 @@ public class BookClass implements Borrowable {
     };
 
     // borrow method:
-    public void borrow() {
+    public void borrowBook() {
         if (status == Status.AVAILABLE) {
             status = Status.CHECKED_OUT;
             System.out.println("Book checked out successfully.");

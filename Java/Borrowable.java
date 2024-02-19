@@ -1,6 +1,6 @@
 package Java;
 
 public interface Borrowable {
-    void borrow();
+    void borrowBook();
     void returnBook();
 }
