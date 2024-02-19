@@ -1,14 +1,14 @@
 package Java;
 
-public class BookClass implements Borrowable {
+public class Book implements Borrowable {
     private String title;
-    private AuthorClass author;
+    private Author author;
     private String ISBN;
     private String publisher;
     private Integer numberOfCopies;
     private Status status;
 
-    public BookClass(String title, AuthorClass author, String ISBN, String publisher, Integer numberOfCopies) {
+    public Book(String title, Author author, String ISBN, String publisher, Integer numberOfCopies) {
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
@@ -23,7 +23,7 @@ public class BookClass implements Borrowable {
     };
 
     // Getter method for author:
-    public AuthorClass getAuthor() {
+    public Author getAuthor() {
         return author;
     };
 
@@ -47,13 +47,17 @@ public class BookClass implements Borrowable {
         return status;
     }
 
+    public String toString() {
+        return this.title + " by " + this.author.getName();
+    }
+
     // Setter method for title:
     public void setTitle(String title) {
         this.title = title;
     }
 
     // Setter method for author:
-    public void setAuthor(AuthorClass author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
