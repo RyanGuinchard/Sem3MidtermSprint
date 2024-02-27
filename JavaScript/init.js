@@ -4,7 +4,6 @@ const template = require("./template");
 
 function initializeApp(args) {
     console.log("Initializing the application...");
-    console.log("Arguments:", args); // Print out the arguments for debugging
   
     // Check if any options are provided
     if (args && args.length > 1) {
@@ -42,7 +41,7 @@ function createNeededDirectories() {
   console.log("Creating needed directories...");
 
   // Define directory paths
-  const directories = ["./config", "./logs"];
+  const directories = ["./config", "./logs", "./json"];
 
   // Create directories if they don't exist
   directories.forEach((directory) => {

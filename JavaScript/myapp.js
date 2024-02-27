@@ -1,3 +1,4 @@
+const fs = require("fs");
 const { initializeApp } = require("./init");
 const { config } = require("./config");
 const { tokenApp } = require("./token");
@@ -13,6 +14,16 @@ function main() {
   } else {
     // Determine the command
     const command = args[0];
+    // Logs command:
+    const sanitizedTimestamp = new Date().toLocaleDateString().replace(/\//g, '-');
+    const logFileName = `logs/${sanitizedTimestamp}.log`;
+    if (!fs.existsSync('logs')) {
+      fs.mkdirSync('logs');
+    }
+    fs.appendFile(logFileName, `Command executed: ${command} - Timestamp: ${new Date().toLocaleString()}\n`, (err) => {
+      if (err) throw err;
+    });
+    
     switch (command) {
       case "init":
         initializeApp(args);
@@ -32,6 +43,7 @@ function main() {
         });
         break;
     }
+
   }
 }
 
