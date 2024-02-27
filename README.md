@@ -14,7 +14,7 @@ oblems/problem2)
 ## Contributors
 
 - [RyanGuinchard](https://github.com/RyanGuinchard)
-- [JustinWhalen](https://github.com/Jwhalen)
+- [JustinWhalen](https://github.com/Jwwhalen)
 - [@username3](https://github.com/username3)
 
 ## License
