@@ -1,7 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const { tokenApp } = require('./token.js'); // Assuming myapp.js is in the same directory
+const { tokenApp } = require('./token.js');
 
 
 const server = http.createServer((req, res) => {

@@ -1,8 +1,0 @@
-{
-  "name": "MyApp",
-  "version": "1.0.0",
-  "description": "Command Line Interface (CLI) for MyApp",
-  "main": "myapp.js",
-  "superuser": "admin",
-  "database": "exampledb"
-}
